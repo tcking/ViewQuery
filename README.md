@@ -6,6 +6,8 @@ A simple convenience library for Android views,this library only wrapper the vie
  
  The view-Query library is available from (jcenter)[http://bintray.com/bintray/jcenter]
  
+ `compile 'com.github.tcking:viewquery:1.0'`
+ 
  Or U can Simply copy the ViewQuery class into your project,  and you are good to go.
  
  ## Examples
