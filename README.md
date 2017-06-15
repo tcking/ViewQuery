@@ -4,7 +4,7 @@ A simple convenience library for Android views,this library only wrapper the vie
  
  ## Usage
  
- The view-Query library is available from (jcenter)[http://bintray.com/bintray/jcenter]
+ The view-Query library is available from [jcenter](http://bintray.com/bintray/jcenter)
  
  `compile 'com.github.tcking:viewquery:1.0'`
  
