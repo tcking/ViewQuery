@@ -43,9 +43,7 @@ bintrayPro.load(propFile.newDataInputStream())
 
 //read properties
 def projectName = properties.getProperty("project.name")
-def projectDesc = properties.getProperty("project.desc" +
-        "" +
-        "")
+def projectDesc = properties.getProperty("project.desc")
 def projectGroupId = properties.getProperty("project.groupId")
 def projectArtifactId = properties.getProperty("project.artifactId")
 def projectVersionName = android.defaultConfig.versionName
@@ -140,7 +138,7 @@ bintray {
         websiteUrl = projectSiteUrl
         issueTrackerUrl = projectIssueTrackerUrl
         vcsUrl = projectGitUrl
-        labels = ['android', 'view', 'AQuery']
+        labels = ['android', 'view', 'Query']
         licenses = ["Apache-2.0"]
         publish = true
     }
