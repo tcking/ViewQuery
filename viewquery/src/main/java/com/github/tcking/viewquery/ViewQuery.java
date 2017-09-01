@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.Editable;
 import android.util.SparseArray;
 import android.view.View;
@@ -108,13 +109,10 @@ public class ViewQuery {
     }
 
 
-    public View view() {
-        return view;
+    public <T extends View> T view() {
+        return (T) view;
     }
 
-    public <T extends View> T  view(Class<T> z) {
-        return (T)view;
-    }
 
     public String text() {
         if (view != null && view instanceof TextView) {
@@ -132,7 +130,9 @@ public class ViewQuery {
 
     public ViewQuery alpha(float alpha) {
         if (view != null) {
-            view.setAlpha(alpha);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                view.setAlpha(alpha);
+            }
         }
         return this;
     }
