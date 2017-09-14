@@ -363,4 +363,18 @@ public class ViewQuery {
         return this;
     }
 
+    public int screenWidth(){
+        if (context != null) {
+            return context.getResources().getDisplayMetrics().widthPixels;
+        }
+        return 0;
+    }
+
+    public int screenHeight(){
+        if (context != null) {
+            return context.getResources().getDisplayMetrics().heightPixels;
+        }
+        return 0;
+    }
+
 }
