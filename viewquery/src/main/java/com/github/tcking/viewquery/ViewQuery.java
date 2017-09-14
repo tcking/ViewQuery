@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.BaseAdapter;
+import android.widget.Checkable;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -110,6 +111,10 @@ public class ViewQuery {
 
 
     public <T extends View> T view() {
+        return (T) view;
+    }
+
+    public <T extends View> T view(Class<T> clazz) {
         return (T) view;
     }
 
@@ -343,4 +348,19 @@ public class ViewQuery {
 
         }
     }
+
+    public boolean checked() {
+        if (view != null && view instanceof Checkable) {
+            return ((Checkable) view).isChecked();
+        }
+        return false;
+    }
+
+    public ViewQuery checked(boolean checked) {
+        if (view != null && view instanceof Checkable) {
+            ((Checkable) view).setChecked(checked);
+        }
+        return this;
+    }
+
 }
